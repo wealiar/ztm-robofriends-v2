@@ -7,7 +7,9 @@ class Header extends Component {
     }
 
     render() {
-        return <h1 className='f1'>RoboFriends PWA</h1>
+        return <h1 className='f1'>Robo 
+        Friends 
+        PWA</h1>
     }
 }
 
