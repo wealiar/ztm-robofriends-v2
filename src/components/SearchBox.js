@@ -1,10 +1,8 @@
 import React from 'react';
 
 const SearchBox = ({ searchField, searchChange }) => {
-    console.log('SearchBox');
     return (
         <div className='pa2'>
-            {/* <label for='searchbox-id'>Search: </label> */}
             <input
                 aria-label='Search Robots'
                 id='searchbox-id'
