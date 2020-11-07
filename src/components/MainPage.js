@@ -8,8 +8,8 @@ import './MainPage.css'
 
 class MainPage extends Component {
     componentDidMount() {
-        console.log('NODE_ENV', process.env.NODE_ENV);
-        console.log('NODE_ENV', process.env.REACT_APP_SAY_HI);
+        // console.log('NODE_ENV', process.env.NODE_ENV);
+        // console.log('NODE_ENV', process.env.REACT_APP_SAY_HI);
         this.props.onRequestRobots();
     }
 
