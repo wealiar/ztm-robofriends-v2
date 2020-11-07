@@ -1,20 +1,33 @@
 version: 2.1
 jobs:
-  bobby:
+  build:
     docker:
-      - image: cimg/ruby:2.7.1-node
+      - image: cimg/node:current
     steps:
       - checkout
-      - run: echo "A first hello"
-  sally:
+      - run: echo "npm installing"
+      - run: npm i
+      - run: CI=true npm run build
+  test:
     docker:
-      - image: cimg/ruby:2.7.1-node
+      - image: cimg/node:current
     steps:
       - checkout
-      - run: echo "Double trouble2"
+      - run: echo "testing stuff"
+      - run: npm i
+      - run: npm test
+  hithere:
+    docker:
+      - image: cimg/node:current
+    steps:
+      - checkout
+      - run: echo 'hello'
 workflows:
   version: 2
-  bobby_sally:
+  build_test_and_ling:
     jobs:
-      - bobby
-      - sally
+      - build
+      - hithere
+      - test:
+          requires:
+            - hithere
