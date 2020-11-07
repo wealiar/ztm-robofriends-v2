@@ -1,10 +1,20 @@
 version: 2.1
 jobs:
-  build:
+  bobby:
     docker:
-      # - image: circleci/ruby:2.4.1
-      # - image: cimg/base:2020.01
       - image: cimg/ruby:2.7.1-node
     steps:
       - checkout
       - run: echo "A first hello"
+  sally:
+    docker:
+      - image: cimg/ruby:2.7.1-node
+    steps:
+      - checkout
+      - run: echo "Double trouble"
+workflows:
+  version: 2
+  bobby_sally:
+    jobs:
+      - bobby
+      - sally
