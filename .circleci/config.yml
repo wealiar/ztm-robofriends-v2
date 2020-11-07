@@ -11,7 +11,7 @@ jobs:
       - image: cimg/ruby:2.7.1-node
     steps:
       - checkout
-      - run: echo "Double trouble"
+      - run: echo "Double trouble2"
 workflows:
   version: 2
   bobby_sally:
